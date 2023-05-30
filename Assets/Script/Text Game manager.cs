@@ -41,14 +41,14 @@ public class TextGamemanager : MonoBehaviour
     public void runAway()
     {
         storyText = "Fearing that the witch will do you harm, you try to run as fast as a bunny, hopping down a sloping mountain.\r\nonly boundless darkness was left.";
-        hpValue = -10;
+        hpValue -=10;
         level_1_Choices.SetActive(false);
     }
 
     public void witchPotion()
     {
         Accept_lvl_1.SetActive(false);
-        hpValue = +10;
-        storyText += "Although the witch was short-tempered, she was good of heart";
+        hpValue += 10;
+        storyText = "Although the witch was short-tempered, she was good of heart";
     }
 }
