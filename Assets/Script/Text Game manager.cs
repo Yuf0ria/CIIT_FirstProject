@@ -9,7 +9,7 @@ public class TextGamemanager : MonoBehaviour
     public TextMeshProUGUI storyTextMeshPro, hpTextMeshPro, staminaTextMeshPro;
     public string storyText;
     public int hpValue, staminaValue;
-    public GameObject level_1_Choices, Accept_lvl_1;
+    public GameObject level_1_Choices, levelchoice, Accept_lvl_1, level2;
 
     // Start is called before the first frame update
     void Start()
@@ -50,5 +50,27 @@ public class TextGamemanager : MonoBehaviour
         Accept_lvl_1.SetActive(false);
         hpValue += 10;
         storyText = "Although the witch was short-tempered, she was good of heart";
+        level2.SetActive(true);
+    }
+
+    public void Continue()
+    {
+        storyText = "You continue on your way, deciding not to drink, and returned home safely.";
+        level2.SetActive(false);
+    }
+
+    public void Retry()
+    {
+        storyText = "maybe there could be something more";
+        level2.SetActive(false);
+        level_1_Choices.SetActive(true);
+        levelchoice.SetActive(false);
+    }
+
+    public void DrinkPotion()
+    {
+        storyText = "Drinking the potion made you feel stronger and more able, you felt as though you live a long life";
+        hpValue += 1000;
+        staminaValue += 500;
     }
 }
